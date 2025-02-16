@@ -8,7 +8,7 @@ import "dotenv/config";
 const client = new MongoClient(process.env.MONGODB_ATLAS_URI as string);
 
 const llm = new ChatOpenAI({
-  modelName: "gpt-o3-mini",
+  modelName: "gpt-4o-mini",
   temperature: 0.7,
 });
 
