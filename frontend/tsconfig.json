@@ -1,0 +1,14 @@
+// tsconfig.json (root)
+{
+  "files": [],
+  "compilerOptions": {
+    "baseUrl": ".",                // Required so paths resolve relative to the project root
+    "paths": {
+      "@/*": ["./src/*"]           // Example alias mapping "@/..." to your src folder
+    }
+  },
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
