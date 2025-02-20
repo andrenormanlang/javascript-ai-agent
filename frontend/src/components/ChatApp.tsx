@@ -8,6 +8,8 @@ import {
   CardTitle,
   CardFooter,
 } from "../components/ui/card";
+import ReactMarkdown from "react-markdown";
+
 
 interface ChatMessage {
   sender: "user" | "agent";
@@ -79,7 +81,7 @@ const ChatApp: React.FC = () => {
   return (
     <Card className="max-w-2xl mx-auto mt-10 shadow bg-white dark:bg-gray-800">
       <CardHeader className="bg-gray-50 dark:bg-gray-900">
-        <CardTitle className="text-2xl dark:text-white">AI Chat</CardTitle>
+        <CardTitle className="text-4xl dark:text-white text-center">AI Frontend Principles Chat</CardTitle>
       </CardHeader>
       <CardContent
         ref={chatContainerRef}
@@ -102,7 +104,7 @@ const ChatApp: React.FC = () => {
                   : "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-100"
               }`}
             >
-              {msg.text}
+              <ReactMarkdown>{msg.text}</ReactMarkdown>
             </p>
           </div>
         ))}
@@ -117,7 +119,7 @@ const ChatApp: React.FC = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Type your question or message..."
+          placeholder="Type your question or message regarding Frontend principles..."
           className="flex-1"
         />
         <Button onClick={sendMessage} disabled={isLoading}>
